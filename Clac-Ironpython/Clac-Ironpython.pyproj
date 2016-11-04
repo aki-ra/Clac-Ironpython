@@ -27,6 +27,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Clac_Ironpython.py" />
+    <Compile Include="mvvm.py" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Clac_Ironpython.xaml">

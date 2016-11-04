@@ -1,6 +1,51 @@
 ﻿<Window 
        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
-       Title="Clac-Ironpython" Height="300" Width="300"> 
-       <Grid></Grid>
-</Window> 
+       Title="Calc-python-WPF" Height="300" Width="300">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <Button x:Name="zero" Content="0" Command="{Binding addDigitCommand}" CommandParameter="0" Grid.Row="5" Grid.Column="0" Height="Auto" Grid.ColumnSpan="2" />
+        <Button x:Name="point" Content="." Command="{Binding addDigitCommand}" CommandParameter="." Grid.Row="5" Grid.Column="2" Height="Auto" Grid.ColumnSpan="1" />
+        <Button x:Name="one" Content="1" Command="{Binding addDigitCommand}" CommandParameter="1" Grid.Row="4" Grid.Column="0" Height="Auto" />
+        <Button x:Name="two" Content="2" Command="{Binding addDigitCommand}" CommandParameter="2" Grid.Row="4" Grid.Column="1" Height="Auto"  />
+        <Button x:Name="three" Content="3" Command="{Binding addDigitCommand}" CommandParameter="3" Grid.Row="4" Grid.Column="2" Height="Auto" />
+        <Button x:Name="four" Content="4" Command="{Binding addDigitCommand}" CommandParameter="4" Grid.Row="3" Grid.Column="0" Height="Auto" />
+        <Button x:Name="five" Content="5" Command="{Binding addDigitCommand}" CommandParameter="5" Grid.Row="3" Grid.Column="1" Height="Auto"/>
+        <Button x:Name="six" Content="6" Command="{Binding addDigitCommand}" CommandParameter="6" Grid.Row="3" Grid.Column="2" Height="Auto" />
+        <Button x:Name="seven" Content="7" Command="{Binding addDigitCommand}" CommandParameter="7" Grid.Row="2" Grid.Column="0" Height="Auto"  />
+        <Button x:Name="eight" Content="8" Command="{Binding addDigitCommand}" CommandParameter="8" Grid.Row="2" Grid.Column="1" Height="Auto" />
+        <Button x:Name="nine" Content="9" Command="{Binding addDigitCommand}" CommandParameter="9" Grid.Row="2" Grid.Column="2" Height="Auto"/>
+        <Button x:Name="equal" Content="=" Command="{Binding operatorCommand}" CommandParameter="=" Grid.Row="4" Grid.Column="3" Height="Auto" Grid.RowSpan="2" />
+        <Button x:Name="plus" Content="+" Command="{Binding operatorCommand}" CommandParameter="+" Grid.Row="3" Grid.Column="3" Height="Auto" Grid.RowSpan="1"/>
+        <Button x:Name="minus" Content="-" Command="{Binding operatorCommand}" CommandParameter="-" Grid.Row="2" Grid.Column="3" Height="Auto" />
+        <Button x:Name="times" Content="×" Command="{Binding operatorCommand}" CommandParameter="x" Grid.Row="1" Grid.Column="3" Height="Auto" />
+        <Button x:Name="divide" Content="÷" Command="{Binding operatorCommand}" CommandParameter="/" Grid.Row="1" Grid.Column="2" Height="Auto" />
+        <Button x:Name="allClear" Content="AC" Command="{Binding operatorCommand}" CommandParameter="AC" Grid.Row="1" Grid.Column="0" Height="Auto"/>
+        <Button x:Name="clear" Content="C" Command="{Binding operatorCommand}" CommandParameter="C" Grid.Row="1" Grid.Column="1" Height="Auto" />
+        <Grid Grid.Row="0" Grid.ColumnSpan="4">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="2*"/>
+            </Grid.RowDefinitions>
+            <TextBox x:Name="outputText" Background="White" Padding="6,0,0,2" Grid.Row="0" Grid.ColumnSpan="4" Grid.Column="0"  TextAlignment="Left" Text="{Binding outputText}" IsEnabled="False"/>
+            <TextBox x:Name="inputText" Background="White" Padding="6,0,0,2" Grid.Row="1" Grid.ColumnSpan="4" Grid.Column="0"  TextAlignment="Right" Text="{Binding inputText}" IsEnabled="False"/>
+
+        </Grid>
+
+    </Grid>
+
+</Window>
