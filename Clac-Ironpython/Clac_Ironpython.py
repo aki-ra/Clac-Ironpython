@@ -44,7 +44,7 @@ class MyViewModel(ViewModel):
             return
         if self.outputText is '':
             self.outputText = 0
-        if param == '/' and float(self.inputText) == 0:
+        if self.prevOperator == '/' and float(self.inputText) == 0:
             self.inputText = ''
             self.outputText = ''
             return
