@@ -15,10 +15,10 @@ class MyViewModel(ViewModel):
     prevOperator = '='
 
 
-    operators = {'+':lambda a, b : frac(a) + frac(b),\
-                 '-':lambda a, b : frac(a) - frac(b),\
-                 'x':lambda a, b : frac(a) * frac(b),\
-                 '/':lambda a, b : frac(a) / frac(b),\
+    operators = {'+':lambda a, b : a + frac(b),\
+                 '-':lambda a, b : a - frac(b),\
+                 'x':lambda a, b : a * frac(b),\
+                 '/':lambda a, b : a / frac(b),\
                  '=':lambda a, b : frac(b) }
 
     @command
@@ -49,7 +49,7 @@ class MyViewModel(ViewModel):
             self.outputText = ''
             return
            
-        self.outputNumber = self.operators[self.prevOperator](self.outputText, self.inputText)
+        self.outputNumber = self.operators[self.prevOperator](self.outputNumber, self.inputText)
         self.prevOperator = param
         self.inputText = ''
         self.outputText = str(float(self.outputNumber))
